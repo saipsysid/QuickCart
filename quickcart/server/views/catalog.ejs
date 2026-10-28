@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuickCart server catalog</title>
+    <style>
+      body { margin: 0; padding: 2rem; background: #f6f8f5; color: #10251c; font: 16px system-ui, sans-serif; }
+      main { max-width: 900px; margin: auto; }
+      article { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; margin: .6rem 0; background: white; border-radius: 12px; }
+      small { color: #6e7b75; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>QuickCart catalog</h1>
+      <p>Server-rendered with EJS from the Express product store.</p>
+      <% products.forEach((product) => { %>
+        <article>
+          <div><strong><%= product.icon %> <%= product.name %></strong><br><small><%= product.brand %> · <%= product.store %> · <%= product.category %></small></div>
+          <strong>₹<%= product.price %></strong>
+        </article>
+      <% }) %>
+    </main>
+  </body>
+</html>
